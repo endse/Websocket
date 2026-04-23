@@ -1,0 +1,12 @@
+target/
+*.class
+*.jar
+*.war
+*.ear
+.git/
+.idea/
+.vscode/
+*.bat
+*.sh
+logs/
+.DS_Store

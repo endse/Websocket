@@ -7,9 +7,7 @@ services:
     plan: free
     envVars:
       - key: SPRING_DATASOURCE_URL
-        fromDatabase:
-          name: chat-db
-          property: connectionString
+        value: jdbc:postgresql://${CHAT_DB_HOST}:${CHAT_DB_PORT}/${CHAT_DB_DATABASE}
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
           name: chat-db
@@ -22,6 +20,7 @@ services:
         generateValue: true
       - key: CORS_ALLOWED_ORIGINS
         value: https://your-frontend-url.vercel.app
+    healthCheckPath: /api/health
 
 databases:
   - name: chat-db
